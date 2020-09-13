@@ -1,0 +1,13 @@
+# ignores dups and commands starting with spaces
+export HISTCONTROL=ignoreboth
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTFILESIZE=9999
+export HISTSIZE=9999
+
+# FZF use RG
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
